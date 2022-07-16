@@ -265,7 +265,7 @@
                 </span>
                 <span class="home-answer3 textarea">
                   <span class="home-text51">
-                    INSERT INTO FUNCTION url(getSetting(&apos;custom_url<&apos;)</span>
+                    INSERT INTO FUNCTION url(getSetting(&apos;custom_url&apos;)</span>
                   <span class="home-text54">
                     , JSONEachRow, &apos;key String, value UInt64&apos;) VALUES
                     (&apos;hello&apos;, 1)
@@ -284,10 +284,7 @@
                 </span>
                 <span class="home-answer5 textarea">
                   <span class="home-text55">
-                    SELECT * FROM url(getSetting(&apos;
-                  </span>
-                  <span style="color: red;">custom_url</span>
-                  <span class="home-text57">&apos;)</span>
+                    SELECT * FROM url(getSetting(&apos;custom_url&apos;)</span>
                   <span class="home-text58">, JSONEachRow)</span>
                 </span>
               </div>
@@ -331,9 +328,9 @@
                   <span>​</span>
                   <span>┌─key──┬─value┐</span>
                   <br />
-                  <span>│ hello │     1 │</span>
+                  <span style="white-space: pre">│ hello │     1 │</span>
                   <br />
-                  <span>│ world │     2 │</span>
+                  <span style="white-space: pre">│ world │     2 │</span>
                   <br />
                   <span>└─────┴─────┘</span>
                   <br />
