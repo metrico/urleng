@@ -404,7 +404,7 @@
 }
 .home-faqs {
   width: 100%;
-  height: 1577px;
+  height: auto;
   display: flex;
   max-width: var(--dl-size-size-maxcontent);
   margin-top: var(--dl-space-space-fiveunits);
