@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <title>Serverless URL Engine</title>
+    <meta property="og:title" content="Serverless URL Engine" />
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="og:title" content="Start - Serverless URL Engine" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta property="twitter:card" content="summary_large_image" />
+    <style data-tag="reset-style-sheet">
+      html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6 {  margin: 0;  padding: 0;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] {  -webkit-appearance: button;}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}input {  padding: 2px 4px;}img {  display: block;}html { scroll-behavior: smooth  }
+    </style>
+    <style data-tag="default-style-sheet">
+      html {
+        font-family: Arial;
+        font-size: 16px;
+      }
+
+      body {
+        font-weight: 400;
+        font-style:normal;
+        text-decoration: none;
+        text-transform: none;
+        letter-spacing: normal;
+        line-height: 1.55;
+        color: var(--dl-color-gray-black);
+        background-color: var(--dl-color-gray-white);
+
+      }
+    </style>
+    <link
+      rel="shortcut icon"
+      href="/playground_assets/cloudflare_worker.svg"
+      type="icon/png"
+      sizes="32x32"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400;500;600;700;800;900&display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100;0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap"
+      data-tag="font"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div>
+      <link href="./home.css" rel="stylesheet" />
+
+      <div class="home-container">
+        <div data-role="Header" class="home-navbar-container">
+          <div class="home-navbar">
+            <span class="home-heading">💾 Serverless URL Engine</span>
+            <div data-type="BurgerMenu" class="home-burger-menu">
+              <svg viewBox="0 0 1024 1024" class="home-icon">
+                <path
+                  d="M128 256h768v86h-768v-86zM128 554v-84h768v84h-768zM128 768v-86h768v86h-768z"
+                ></path>
+              </svg>
+            </div>
+            <div data-type="MobileMenu" class="home-mobile-menu">
+              <div class="home-container1">
+                <span class="card-Heading home-heading1">Logo</span>
+                <div data-type="CloseMobileMenu" class="home-close-menu">
+                  <svg viewBox="0 0 1024 1024" class="home-icon2">
+                    <path
+                      d="M810 274l-238 238 238 238-60 60-238-238-238 238-60-60 238-238-238-238 60-60 238 238 238-238z"
+                    ></path>
+                  </svg>
+                </div>
+              </div>
+              <div class="home-links-container">
+                <span class="home-link navbar-Link">About</span>
+                <span class="home-link1 navbar-Link">Experience</span>
+                <span class="home-link2 navbar-Link">Portofolio</span>
+                <span class="navbar-Link">Contact</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="home-section-separator"></div>
+        <div class="home-section-separator1"></div>
+        <div class="home-container2">
+          <div class="home-hero">
+            <div class="home-hero-text-container">
+              <h1 class="home-heading2">Free, Serverless URL Engine</h1>
+              <span class="home-text">
+                <span>
+                  Store and Access your data with zero effort - like a
+                </span>
+                <span class="home-text02">pastie</span>
+                <span>.</span>
+                <br />
+                <span>
+                  Free anywhere, anytime - all you need is a ClickHouse Client.
+                </span>
+                <br />
+                <span></span>
+                <br />
+                <span class="home-text09">❤️ Powered by</span>
+                <a
+                  href="https://workers.cloudflare.com/"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >
+                  <span class="home-text10">CloudFlare Workers</span>
+                </a>
+                <span class="home-text11">and Deta</span>
+                <a
+                  href="https://deta.sh"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >
+                  <span class="home-text12">Cloud Base ❤️</span>
+                </a>
+              </span>
+              <div class="home-cta-btn-container">
+                <a href="start.html" class="home-cta-btn anchor button">
+                  <span class="home-text13">GET STARTED</span>
+                </a>
+              </div>
+            </div>
+            <img
+              alt="image"
+              src="https://images.unsplash.com/photo-1635404617144-8e262a622e41?ixid=Mnw5MTMyMXwwfDF8c2VhcmNofDExOHx8aW5maW5pdHl8ZW58MHx8fHwxNjU3OTk0MTAz&amp;ixlib=rb-1.2.1&amp;w=1200"
+              class="home-image"
+            />
+          </div>
+        </div>
+        <div class="home-section-separator2"></div>
+        <div class="home-section-separator3"></div>
+        <div class="home-steps">
+          <h1 class="home-text14">How and Why?</h1>
+          <div class="home-container3">
+            <div class="home-container4">
+              <div class="home-step">
+                <h1 class="home-text15">
+                  <span></span>
+                  <span>Simple</span>
+                </h1>
+                <span class="home-text18">
+                  <span></span>
+                  <span></span>
+                  <span>
+                    Sharing quick table datasets between CH servers is now fun
+                  </span>
+                  <br />
+                  <span></span>
+                </span>
+              </div>
+              <div class="home-step1">
+                <h1 class="home-text23"><span>Open</span></h1>
+                <span class="home-text25">
+                  <span></span>
+                  <span></span>
+                  <span>
+                    No signups, No logins. Everything is public, just like a
+                    pastie service
+                  </span>
+                  <br />
+                  <span></span>
+                </span>
+              </div>
+            </div>
+            <div class="home-container5">
+              <div class="home-step2">
+                <h1 class="home-text30"><span>Free</span></h1>
+                <span class="home-text32">
+                  <span></span>
+                  <span></span>
+                  <span>
+                    No costs, everything runs on free serverless cloud workers
+                  </span>
+                  <br />
+                  <span></span>
+                </span>
+              </div>
+              <div class="home-step3">
+                <h1 class="home-text37"><span>Unlimited</span></h1>
+                <span class="home-text39">
+                  <span></span>
+                  <span></span>
+                  <span>
+                    As long as Deta Cloud Base is unlimited, so are your tables
+                  </span>
+                  <br />
+                  <span></span>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <img
+          alt="image"
+          src="public/playground_assets/179358754-92665ed1-c0f5-486f-9b94-e69144f8047a%5B1%5D-1000w.png"
+          class="home-image1"
+        />
+        <div class="home-section-separator4"></div>
+        <div id="howto" class="home-faqs">
+          <h2 class="home-text44">
+            Ready? Get your own table in zero minutes ⏱️
+          </h2>
+          <div class="home-content-container">
+            <div class="home-faq">
+              <div class="home-question-container">
+                <span class="home-question">Choose a unique URL path</span>
+              </div>
+              <div class="home-answer-container">
+                <span class="home-answer">
+                  <span>
+                    Since there are no logins or signups, all data is hidden in
+                    public. The only protection is your own secret URL path.
+                  </span>
+                  <br />
+                  <span>
+                    Choose your URL path wisely (or use a secure hash), example:
+                  </span>
+                </span>
+                <code class="home-answer1 textarea">
+                  <span>SET custom_url = &apos;https://urleng.com/</span>
+                  <span class="home-text49">supersecret_token</span>
+                  <span class="home-text50">&apos;</span>
+                </code>
+              </div>
+            </div>
+            <div class="home-faq1">
+              <div class="home-question-container1">
+                <span class="home-question1">INSERT data</span>
+              </div>
+              <div class="home-answer-container1">
+                <span class="home-answer2">
+                  It&apos;s time to insert some data. The serverless table will
+                  automatically adapt to the schema inserts
+                </span>
+                <span class="home-answer3 textarea">
+                  <span class="home-text51">
+                    INSERT INTO FUNCTION url(getSetting(&apos;
+                  </span>
+                  <span class="home-text52">custom_url</span>
+                  <span class="home-text53">&apos;)</span>
+                  <span class="home-text54">
+                    , JSONEachRow, &apos;key String, value UInt64&apos;) VALUES
+                    (&apos;hello&apos;, 1)
+                  </span>
+                </span>
+              </div>
+            </div>
+            <div class="home-faq2">
+              <div class="home-question-container2">
+                <span class="home-question2">SELECT data</span>
+              </div>
+              <div class="home-answer-container2">
+                <span class="home-answer4">
+                  Let&apos;s read our data back and apply some logic for fun.
+                  Note due to how ClickHouse works, the full table is read.
+                </span>
+                <span class="home-answer5 textarea">
+                  <span class="home-text55">
+                    SELECT * FROM url(getSetting(&apos;
+                  </span>
+                  <span class="home-text56">custom_url</span>
+                  <span class="home-text57">&apos;)</span>
+                  <span class="home-text58">, JSONEachRow)</span>
+                </span>
+              </div>
+            </div>
+            <div class="home-faq3">
+              <div class="home-question-container3">
+                <span class="home-question3">CREATE URL Table</span>
+              </div>
+              <div class="home-answer-container3">
+                <span class="home-answer6">
+                  If you plan on using the data frequently, you can create a
+                  persistent URL Engine table. Choose any schema, too.
+                </span>
+                <span class="home-answer7 textarea">
+                  <span>:) CREATE TABLE default.url_engine_distributed</span>
+                  <br />
+                  <span>(</span>
+                  <br />
+                  <span>`key` String,</span>
+                  <br />
+                  <span>`value` UInt64,</span>
+                  <br />
+                  <span>)</span>
+                  <br />
+                  <span>ENGINE = URL(&apos;https://urleng.com/</span>
+                  <span class="home-text65">supersecret</span>
+                  <span>&apos;, &apos;JSONEachRow&apos;)</span>
+                  <br />
+                  <span></span>
+                  <br />
+                  <span></span>
+                  <br />
+                  <span>​</span>
+                  <span>
+                    :) INSERT INTO url_engine_distributed VALUES
+                    (&apos;hello&apos;, 1), (&apos;world&apos;, 2)
+                  </span>
+                  <br />
+                  <span>:) SELECT * FROM url_engine_distributed</span>
+                  <br />
+                  <span></span>
+                  <br />
+                  <span>​</span>
+                  <span>┌─key──┬─value┐</span>
+                  <br />
+                  <span>│ hello │ 1 │</span>
+                  <br />
+                  <span>│ world │ 2 │</span>
+                  <br />
+                  <span>└─────┴─────┘</span>
+                  <br />
+                  <span></span>
+                  <br />
+                  <span>2 rows in set. Elapsed: 0.185 sec.</span>
+                  <span></span>
+                  <span></span>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="home-features">
+          <h1 class="home-text87">💀 Service Disclaimers</h1>
+          <div class="home-container6">
+            <div
+              class="feature-card2-feature-card feature-card2-root-class-name"
+            >
+              <svg viewBox="0 0 1024 1024" class="feature-card2-icon">
+                <path
+                  d="M809.003 291.328l-297.003 171.819-297.003-171.819 275.456-157.397c4.779-2.731 9.899-4.48 15.147-5.333 9.301-1.451 18.987 0.128 27.904 5.291zM491.776 979.669c6.016 3.243 12.928 5.077 20.224 5.077 7.381 0 14.336-1.877 20.395-5.163 15.189-2.475 29.909-7.68 43.392-15.36l298.709-170.709c26.368-15.232 45.269-38.315 55.424-64.597 5.675-14.592 8.619-30.165 8.747-46.251v-341.333c0-20.395-4.821-39.723-13.397-56.917-0.939-3.029-2.219-5.973-3.883-8.832-1.963-3.371-4.267-6.357-6.912-8.96-1.323-1.835-2.731-3.669-4.139-5.419-9.813-12.203-21.845-22.528-35.456-30.507l-299.051-170.88c-26.027-15.019-55.467-19.84-83.328-15.531-15.531 2.432-30.507 7.637-44.288 15.488l-298.709 170.709c-16.341 9.429-29.824 21.888-40.149 36.267-2.56 2.56-4.864 5.547-6.784 8.832-1.664 2.901-2.987 5.888-3.925 8.96-1.707 3.456-3.243 6.955-4.608 10.496-5.632 14.635-8.576 30.208-8.704 45.995v341.632c0.043 30.293 10.581 58.197 28.331 80.128 9.813 12.203 21.845 22.528 35.456 30.507l299.051 170.88c13.824 7.979 28.587 13.099 43.605 15.445zM469.333 537.045v340.949l-277.12-158.336c-4.736-2.773-8.832-6.315-12.16-10.411-5.931-7.381-9.387-16.512-9.387-26.581v-318.379zM554.667 877.995v-340.949l298.667-172.757v318.379c-0.043 5.163-1.067 10.496-2.987 15.445-3.413 8.789-9.6 16.384-18.176 21.333z"
+                ></path>
+              </svg>
+              <div class="feature-card2-container">
+                <h2 class="feature-card2-text"><span>Terms of Use</span></h2>
+                <span class="feature-card2-text1">
+                  <span>
+                    No warranties of any kind, either express or implied. Data
+                    can be removed or lost at any moment of time. Use at your
+                    own risk.
+                  </span>
+                </span>
+              </div>
+            </div>
+            <div
+              class="feature-card2-feature-card feature-card2-root-class-name3"
+            >
+              <svg viewBox="0 0 1024 1024" class="feature-card2-icon">
+                <path
+                  d="M809.003 291.328l-297.003 171.819-297.003-171.819 275.456-157.397c4.779-2.731 9.899-4.48 15.147-5.333 9.301-1.451 18.987 0.128 27.904 5.291zM491.776 979.669c6.016 3.243 12.928 5.077 20.224 5.077 7.381 0 14.336-1.877 20.395-5.163 15.189-2.475 29.909-7.68 43.392-15.36l298.709-170.709c26.368-15.232 45.269-38.315 55.424-64.597 5.675-14.592 8.619-30.165 8.747-46.251v-341.333c0-20.395-4.821-39.723-13.397-56.917-0.939-3.029-2.219-5.973-3.883-8.832-1.963-3.371-4.267-6.357-6.912-8.96-1.323-1.835-2.731-3.669-4.139-5.419-9.813-12.203-21.845-22.528-35.456-30.507l-299.051-170.88c-26.027-15.019-55.467-19.84-83.328-15.531-15.531 2.432-30.507 7.637-44.288 15.488l-298.709 170.709c-16.341 9.429-29.824 21.888-40.149 36.267-2.56 2.56-4.864 5.547-6.784 8.832-1.664 2.901-2.987 5.888-3.925 8.96-1.707 3.456-3.243 6.955-4.608 10.496-5.632 14.635-8.576 30.208-8.704 45.995v341.632c0.043 30.293 10.581 58.197 28.331 80.128 9.813 12.203 21.845 22.528 35.456 30.507l299.051 170.88c13.824 7.979 28.587 13.099 43.605 15.445zM469.333 537.045v340.949l-277.12-158.336c-4.736-2.773-8.832-6.315-12.16-10.411-5.931-7.381-9.387-16.512-9.387-26.581v-318.379zM554.667 877.995v-340.949l298.667-172.757v318.379c-0.043 5.163-1.067 10.496-2.987 15.445-3.413 8.789-9.6 16.384-18.176 21.333z"
+                ></path>
+              </svg>
+              <div class="feature-card2-container">
+                <h2 class="feature-card2-text"><span>Security</span></h2>
+                <span class="feature-card2-text1">
+                  <span>
+                    This service does not provide any security or privacy. All
+                    data is stored using free or public clouds. Use at your own
+                    risk.
+                  </span>
+                </span>
+              </div>
+            </div>
+            <div
+              class="feature-card2-feature-card feature-card2-root-class-name2"
+            >
+              <svg viewBox="0 0 1024 1024" class="feature-card2-icon">
+                <path
+                  d="M809.003 291.328l-297.003 171.819-297.003-171.819 275.456-157.397c4.779-2.731 9.899-4.48 15.147-5.333 9.301-1.451 18.987 0.128 27.904 5.291zM491.776 979.669c6.016 3.243 12.928 5.077 20.224 5.077 7.381 0 14.336-1.877 20.395-5.163 15.189-2.475 29.909-7.68 43.392-15.36l298.709-170.709c26.368-15.232 45.269-38.315 55.424-64.597 5.675-14.592 8.619-30.165 8.747-46.251v-341.333c0-20.395-4.821-39.723-13.397-56.917-0.939-3.029-2.219-5.973-3.883-8.832-1.963-3.371-4.267-6.357-6.912-8.96-1.323-1.835-2.731-3.669-4.139-5.419-9.813-12.203-21.845-22.528-35.456-30.507l-299.051-170.88c-26.027-15.019-55.467-19.84-83.328-15.531-15.531 2.432-30.507 7.637-44.288 15.488l-298.709 170.709c-16.341 9.429-29.824 21.888-40.149 36.267-2.56 2.56-4.864 5.547-6.784 8.832-1.664 2.901-2.987 5.888-3.925 8.96-1.707 3.456-3.243 6.955-4.608 10.496-5.632 14.635-8.576 30.208-8.704 45.995v341.632c0.043 30.293 10.581 58.197 28.331 80.128 9.813 12.203 21.845 22.528 35.456 30.507l299.051 170.88c13.824 7.979 28.587 13.099 43.605 15.445zM469.333 537.045v340.949l-277.12-158.336c-4.736-2.773-8.832-6.315-12.16-10.411-5.931-7.381-9.387-16.512-9.387-26.581v-318.379zM554.667 877.995v-340.949l298.667-172.757v318.379c-0.043 5.163-1.067 10.496-2.987 15.445-3.413 8.789-9.6 16.384-18.176 21.333z"
+                ></path>
+              </svg>
+              <div class="feature-card2-container">
+                <h2 class="feature-card2-text"><span>Cookies</span></h2>
+                <span class="feature-card2-text1">
+                  <span>
+                    This service does not collect, store or use cookies.
+                  </span>
+                </span>
+              </div>
+            </div>
+            <div
+              class="feature-card2-feature-card feature-card2-root-class-name1"
+            >
+              <svg viewBox="0 0 1024 1024" class="feature-card2-icon">
+                <path
+                  d="M809.003 291.328l-297.003 171.819-297.003-171.819 275.456-157.397c4.779-2.731 9.899-4.48 15.147-5.333 9.301-1.451 18.987 0.128 27.904 5.291zM491.776 979.669c6.016 3.243 12.928 5.077 20.224 5.077 7.381 0 14.336-1.877 20.395-5.163 15.189-2.475 29.909-7.68 43.392-15.36l298.709-170.709c26.368-15.232 45.269-38.315 55.424-64.597 5.675-14.592 8.619-30.165 8.747-46.251v-341.333c0-20.395-4.821-39.723-13.397-56.917-0.939-3.029-2.219-5.973-3.883-8.832-1.963-3.371-4.267-6.357-6.912-8.96-1.323-1.835-2.731-3.669-4.139-5.419-9.813-12.203-21.845-22.528-35.456-30.507l-299.051-170.88c-26.027-15.019-55.467-19.84-83.328-15.531-15.531 2.432-30.507 7.637-44.288 15.488l-298.709 170.709c-16.341 9.429-29.824 21.888-40.149 36.267-2.56 2.56-4.864 5.547-6.784 8.832-1.664 2.901-2.987 5.888-3.925 8.96-1.707 3.456-3.243 6.955-4.608 10.496-5.632 14.635-8.576 30.208-8.704 45.995v341.632c0.043 30.293 10.581 58.197 28.331 80.128 9.813 12.203 21.845 22.528 35.456 30.507l299.051 170.88c13.824 7.979 28.587 13.099 43.605 15.445zM469.333 537.045v340.949l-277.12-158.336c-4.736-2.773-8.832-6.315-12.16-10.411-5.931-7.381-9.387-16.512-9.387-26.581v-318.379zM554.667 877.995v-340.949l298.667-172.757v318.379c-0.043 5.163-1.067 10.496-2.987 15.445-3.413 8.789-9.6 16.384-18.176 21.333z"
+                ></path>
+              </svg>
+              <div class="feature-card2-container">
+                <h2 class="feature-card2-text"><span>Limitations</span></h2>
+                <span class="feature-card2-text1">
+                  <span>
+                    Worker execution time limits might crop large INSERT queries
+                  </span>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="home-section-separator5"></div>
+        <div class="home-subscribe"></div>
+        <div class="home-section-separator6"></div>
+        <div class="home-footer-container">
+          <div class="home-footer">
+            <div class="home-social-links"></div>
+            <div class="home-copyright-container">
+              <span class="home-link6">
+                (C) Copyright, 2022 QXIP BV. Alpha Release.
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://unpkg.com/@teleporthq/teleport-custom-scripts"></script>
+  </body>
+</html>
