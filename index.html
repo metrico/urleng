@@ -301,21 +301,21 @@
                 <span class="home-answer7 textarea">
                   <span>:) CREATE TABLE default.url_engine_distributed</span>
                   <br />
-                  <span>(</span>
+                  <span style="white-space: pre">   (</span>
                   <br />
-                  <span>`key` String,</span>
+                  <span style="white-space: pre">   `key` String,</span>
                   <br />
-                  <span>`value` UInt64,</span>
+                  <span style="white-space: pre">   `value` UInt64,</span>
                   <br />
-                  <span>)</span>
+                  <span style="white-space: pre">   )</span>
                   <br />
-                  <span>ENGINE = URL(&apos;https://urleng.com/>supersecret&apos;, &apos;JSONEachRow&apos;)</span>
+                  <span style="white-space: pre">   ENGINE = URL(&apos;https://urleng.com/>supersecret&apos;, &apos;JSONEachRow&apos;)</span>
+                  <br />
+                  <span></span>
                   <br />
                   <span></span>
                   <br />
                   <span></span>
-                  <br />
-                  <span>​</span>
                   <span>
                     :) INSERT INTO url_engine_distributed VALUES
                     (&apos;hello&apos;, 1), (&apos;world&apos;, 2)
@@ -325,7 +325,7 @@
                   <br />
                   <span></span>
                   <br />
-                  <span>​</span>
+                  <span></span>
                   <span>┌─key──┬─value┐</span>
                   <br />
                   <span style="white-space: pre">│ hello │     1 │</span>
