@@ -252,7 +252,7 @@
                   </span>
                 </span>
                 <code class="home-answer1 textarea">
-                  <span>SET custom_url = &apos;https://urleng.com/supersecret_token&apos;</span>
+                  <span>SET custom_url = &apos;https://urleng.com/</span><span style="color: orange">super_secret_token</span><span>&apos;</span>
                 </code>
               </div>
             </div>
@@ -267,7 +267,7 @@
                 </span>
                 <span class="home-answer3 textarea">
                   <span class="home-text51">
-                    INSERT INTO FUNCTION url(getSetting(&apos;custom_url&apos;), JSONEachRow, &apos;key String, value UInt64&apos;) VALUES
+                    INSERT INTO FUNCTION url(getSetting(&apos;</span><span style="color: orange">custom_url</span><span>&apos;), JSONEachRow, &apos;key String, value UInt64&apos;) VALUES
                     (&apos;hello&apos;, 1)
                   </span>
                 </span>
@@ -284,7 +284,7 @@
                 </span>
                 <span class="home-answer5 textarea">
                   <span class="home-text55">
-                    SELECT * FROM url(getSetting(&apos;custom_url&apos;), JSONEachRow)
+                    SELECT * FROM url(getSetting(&apos;</span><span style="color: orange">custom_url</span><span>&apos;), JSONEachRow)
                   </span>
                 </span>
               </div>
@@ -309,7 +309,7 @@
                   <br />
                   <span style="white-space: pre">   )</span>
                   <br />
-                  <span style="white-space: pre">   ENGINE = URL(&apos;https://urleng.com/>supersecret&apos;, &apos;JSONEachRow&apos;)</span>
+                  <span style="white-space: pre">   ENGINE = URL(&apos;https://urleng.com/</span><span style="color: orange">super_secret_token</span><span>&apos;, &apos;JSONEachRow&apos;)</span>
                   <br />
                   <span></span>
                   <br />
