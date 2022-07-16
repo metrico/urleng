@@ -250,8 +250,7 @@
                   </span>
                 </span>
                 <code class="home-answer1 textarea">
-                  <span>SET custom_url = &apos;https://urleng.com/</span>
-                  <span style="color: red;">supersecret_token</span>&apos;</span>
+                  <span>SET custom_url = &apos;https://urleng.com/supersecret_token&apos;</span>
                 </code>
               </div>
             </div>
@@ -266,10 +265,7 @@
                 </span>
                 <span class="home-answer3 textarea">
                   <span class="home-text51">
-                    INSERT INTO FUNCTION url(getSetting(&apos;
-                  </span>
-                  <span style="color: red;">custom_url</span>
-                  <span class="home-text53">&apos;)</span>
+                    INSERT INTO FUNCTION url(getSetting(&apos;custom_url<&apos;)</span>
                   <span class="home-text54">
                     , JSONEachRow, &apos;key String, value UInt64&apos;) VALUES
                     (&apos;hello&apos;, 1)
@@ -316,9 +312,7 @@
                   <br />
                   <span>)</span>
                   <br />
-                  <span>ENGINE = URL(&apos;https://urleng.com/</span>
-                  <span style="color: red;">supersecret</span>
-                  <span>&apos;, &apos;JSONEachRow&apos;)</span>
+                  <span>ENGINE = URL(&apos;https://urleng.com/>supersecret&apos;, &apos;JSONEachRow&apos;)</span>
                   <br />
                   <span></span>
                   <br />
