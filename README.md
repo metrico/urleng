@@ -1,3 +1,5 @@
+![visitor badge](https://img.shields.io/endpoint?url=https://y3kp3s.deta.dev)
+
 # Decentralized URL Engine for ClickHouse
 
 Cloudflare + Deta Worker serving a decentralized, stateful, serverless URL Engine platform for ClickHouse.
