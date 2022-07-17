@@ -1,6 +1,6 @@
-# Decentralized URL Engine for ClickHouse (website)
+# Decentralized URL Engine for ClickHouse
 
-Cloudflare Worker serving a decentralized, stateful, serverless URL Engine platform for ClickHouse.
+Cloudflare + Deta Worker serving a decentralized, stateful, serverless URL Engine platform for ClickHouse.
 
 #### About
 
