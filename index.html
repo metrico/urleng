@@ -368,14 +368,17 @@
                   Last but not least, data can be inserted and accessed through curl or any other GET/POST capable client
                 </span>
                 <span class="home-answer5 textarea">
+                  <span class="home-text55"># POST NDJSON Payload</span><br/>
                   <span class="home-text55">
                      curl -s -XPOST https://urleng.com/</span><span style="color: orange">super_secret_token</span><span> -H 'Content-Type:application/x-ndjson' --data-binary @/tmp/ndjson.txt
                   </span>
-                  <br />
+                  <br /><br/>
+                  <span class="home-text55"># POST JSON Payload</span><br/>
                   <span class="home-text55">
                     curl -X POST https://url-engine.metrico.in/</span><span style="color: orange">super_secret_token</span><span> -H 'Content-Type: application/json' -d '[{"key":"curl","value":123}]'
                   </span>
-                  <br />
+                  <br /><br/>
+                  <span class="home-text55"># GET JSON</span><br/>
                   <span class="home-text55">
                      curl -X GET https://urleng.com/</span><span style="color: orange">super_secret_token</span><span>
                   </span>
