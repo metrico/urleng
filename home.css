@@ -287,8 +287,8 @@
   padding: 48px;
   max-width: 1400px;
   align-items: center;
-  padding-left: 163px;
-  padding-right: 139px;
+  padding-left: 8em;
+  padding-right: 8em;
   flex-direction: column;
 }
 .home-text14 {
