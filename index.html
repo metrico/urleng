@@ -264,7 +264,7 @@
                   </span>
                   <br />
                   <span>
-                    Open your ClickHouse client and choose your URL path wisely <i>(like a unique hash)</i> follwing this example:
+                    Open your ClickHouse client and choose your URL path <i>wisely</i> - or just use this randomly generated example:
                   </span>
                 </span>
                 <code class="home-answer1 textarea">
@@ -328,7 +328,7 @@
                   <br />
                   <span style="white-space: pre">   )</span>
                   <br />
-                  <span style="white-space: pre">   ENGINE = URL(&apos;https://urleng.com/</span><span style="color: orange"><script>window.unique()</script><</span><span>&apos;, &apos;JSONEachRow&apos;)</span>
+                  <span style="white-space: pre">   ENGINE = URL(&apos;https://urleng.com/</span><span style="color: orange"><script>window.unique()</script></span><span>&apos;, &apos;JSONEachRow&apos;)</span>
                   <br />
                   <span></span>
                   <br />
@@ -392,7 +392,7 @@
                 </span>
                 <span class="home-answer5 textarea">
                   <span class="home-text55">
-                     clickhouse-local -q "select count() from url('https://urleng.com/</span><span style="color: orange"><script>window.unique()</script><</span><span>', JSONEachRow)"
+                     clickhouse-local -q "select count() from url('https://urleng.com/</span><span style="color: orange"><script>window.unique()</script></span><span>', JSONEachRow)"
                   </span>
                 </span>
               </div>
@@ -409,17 +409,17 @@
                 <span class="home-answer5 textarea">
                   <span class="home-text55" style="color:#666666"># POST ndjson</span><br/>
                   <span class="home-text55">
-                     curl -s -XPOST https://urleng.com/</span><span style="color: orange"><script>window.unique()</script><</span><span> -H 'Content-Type:application/x-ndjson' --data-binary @ndjson.txt
+                     curl -s -XPOST https://urleng.com/</span><span style="color: orange"><script>window.unique()</script></span><span> -H 'Content-Type:application/x-ndjson' --data-binary @ndjson.txt
                   </span>
                   <br /><br/>
                   <span class="home-text55" style="color:#666666"># POST json</span><br/>
                   <span class="home-text55">
-                    curl -X POST https://url-engine.metrico.in/</span><span style="color: orange"><script>window.unique()</script><</span><span> -H 'Content-Type: application/json' -d '[{"key":"curl","value":1}]'
+                    curl -X POST https://url-engine.metrico.in/</span><span style="color: orange"><script>window.unique()</script></span><span> -H 'Content-Type: application/json' -d '[{"key":"curl","value":1}]'
                   </span>
                   <br /><br/>
                   <span class="home-text55" style="color:#666666"># GET json</span><br/>
                   <span class="home-text55">
-                     curl -X GET https://urleng.com/</span><span style="color: orange"><script>window.unique()</script><</span><span>
+                     curl -X GET https://urleng.com/</span><span style="color: orange"><script>window.unique()</script></span><span>
                   </span>
                 </span>
               </div>
