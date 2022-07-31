@@ -1,6 +1,6 @@
 ![visitor badge](https://img.shields.io/endpoint?url=https://y3kp3s.deta.dev)
 
-# Decentralized URL Engine for ClickHouse
+# [Decentralized URL Engine for ClickHouse](https://urleng.com)
 
 Cloudflare + Deta Worker serving a decentralized, stateful, serverless URL Engine platform for ClickHouse.
 
@@ -91,5 +91,8 @@ clickhouse-local -q "select count() from url('https://urleng.com/supersecret', J
 -  Because there is no sign-up, the URL `/path` is essentially a *password*, so pick something unique.
 
 -------
+
+#### Examples
+- [URLENG Prometheus Metrics Storage + Exporter](https://github.com/metrico/distributed-clickhouse-prometheus)
 
 (C) 2022 QXIP BV, for more info visit the [qxip metrico](https://metrico.in) repository
