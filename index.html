@@ -235,6 +235,7 @@
             👇 Ready? Get your own table in zero minutes ⏱️
           </h2>
           <div class="home-content-container">
+            
             <div class="home-faq">
               <div class="home-question-container">
                 <span class="home-question">Choose a unique URL path</span>
@@ -242,8 +243,11 @@
               <div class="home-answer-container">
                 <span class="home-answer">
                   <span>
-                    Since there are no logins or signups, all data is hidden in
-                    public. The only protection is your own secret URL path.
+                    You're about to create your very own serverless, storage persistent URL Engine table - accessible from anywhere.
+                  </span>
+                  <br />
+                  <span>
+                    Since there are no logins or signups, all data is hidden in public. The only protection is your own secret URL path.
                   </span>
                   <br />
                   <span>
@@ -255,6 +259,7 @@
                 </code>
               </div>
             </div>
+            
             <div class="home-faq1">
               <div class="home-question-container1">
                 <span class="home-question1">INSERT data</span>
@@ -340,6 +345,23 @@
                   <span>2 rows in set. Elapsed: 0.185 sec.</span>
                   <span></span>
                   <span></span>
+                </span>
+              </div>
+            </div>
+            
+            <div class="home-faq2">
+              <div class="home-question-container2">
+                <span class="home-question2">EXPIRE/TTL Data</span>
+              </div>
+              <div class="home-answer-container2">
+                <span class="home-answer4">
+                  You can expire data by using or adding an <i>__expires</i> key/column with a future <i>unix timestamp</i>.
+                </span>
+                <span class="home-answer3 textarea">
+                  <span class="home-text51">
+                    :) INSERT INTO FUNCTION url(getSetting(&apos;</span><span style="color: orange">custom_url</span><span>&apos;), JSONEachRow, &apos;key String, value UInt64, __expires UInt64&apos;) VALUES
+                    (&apos;hello&apos;, 1, toUnixTimestamp(now()+300))
+                  </span>
                 </span>
               </div>
             </div>
