@@ -95,5 +95,6 @@ clickhouse-local -q "select count() from url('https://urleng.com/supersecret', J
 #### Examples
 - [URLENG Prometheus Metrics Storage + Exporter](https://github.com/metrico/distributed-clickhouse-prometheus)
 - [URLENG Stand Alone](https://github.com/metrico/clickhouse-node-url-engine) example for self-hosted caches _(in memory)_
+- [URLENG ClickHouse Fiddle](https://fiddle.clickhouse.com/2a71b82b-b7f8-4006-9e2e-01ee0519f0ca) example
 
 (C) 2022 QXIP BV, for more info visit the [qxip metrico](https://metrico.in) repository
