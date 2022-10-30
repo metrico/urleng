@@ -372,6 +372,30 @@
               </div>
             </div>
             
+            
+            <div class="home-faq2">
+              <div class="home-question-container2">
+                <span class="home-question2">PREFILTER Data</span>
+              </div>
+              <div class="home-answer-container2">
+                <span class="home-answer4">
+                  Datasets can be prefiltered using <i>query parameters</i> (<i>ne,lt,lte,gt,gte,pfx</i>).
+                </span>
+                <span class="home-answer3 textarea">
+                  <span class="home-text51">
+                    :) SELECT * FROM url(concat(</span><span style="color: orange">{url:String}, '?', 'value?lt=2'</span>)<span>, JSONEachRow)
+                  <br />&nbsp;&nbsp;
+                  <span>┌─key──┬─value┐</span>
+                  <br />
+                  <span style="white-space: pre">│ hello │     1 │</span>
+                  <br />
+                  <span>└─────┴─────┘</span>
+                  <br />
+                </span>
+              </div>
+            </div>
+            
+            
             <div class="home-faq2">
               <div class="home-question-container2">
                 <span class="home-question2">EXPIRE/TTL Data</span>
