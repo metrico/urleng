@@ -83,6 +83,29 @@ Get data into clickhouse-local with zero efforts:
 clickhouse-local -q "select count() from url('https://urleng.com/supersecret', JSONEachRow)"
 ```
 
+##### chdb
+Get data using [chdb]([https://chdb.dev](https://chdb.fly.dev/?#U0VMRUNUICogZnJvbSB1cmwoJ2h0dHBzOi8vdXJsZW5nLmNvbS94eHgnLCBKU09ORWFjaFJvdywgJ2tleSBTdHJpbmcsIHZhbHVlIFVJbnQ2NCcpIExJTUlUIDEwOw==)) in-memory engine:
+```
+python -m chdb "SELECT * from url('https://urleng.com/xxx', JSONEachRow, 'key String, value UInt64') LIMIT 10;" Pretty
+```
+
+##### CURL
+
+Insert and query data using curl or any other HTTP/S GET/POST capable client.
+
+###### POST ndjson
+```
+curl -s -XPOST https://urleng.com/supersecret -H 'Content-Type:application/x-ndjson' --data-binary @ndjson.txt
+```
+###### POST json
+```
+curl -X POST https://url-engine.metrico.in/supersecret -H 'Content-Type: application/json' -d '[{"key":"curl","value":1}]'
+```
+###### GET
+```
+curl -X GET https://urleng.com/supersecret
+```             
+
 -----
 
 #### Notes
