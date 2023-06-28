@@ -30,11 +30,11 @@ The distributed URL engine platform is running on Cloudflare Workers and utilizi
 The following examples illustrates usage for distributed `INSERT` and `SELECT` statements
 
 ##### INSERT
-```
+```sql
 :) INSERT INTO FUNCTION url('https://urleng.com/supersecret', JSONEachRow, 'key String, value UInt64') VALUES ('hello', 1), ('world', 2)
 ```
 ##### SELECT
-```
+```sql
 :) SELECT * FROM url('https://urleng.com/supersecret', JSONEachRow);
 
 ┌─key───┬─value─┐
@@ -46,7 +46,7 @@ The following examples illustrates usage for distributed `INSERT` and `SELECT` s
 ```
 
 ##### URL ENGINE
-```
+```sql
 :) CREATE TABLE default.url_engine_distributed
    (
        `key` String,
@@ -54,7 +54,7 @@ The following examples illustrates usage for distributed `INSERT` and `SELECT` s
    )
    ENGINE = URL('https://urleng.com/supersecret', 'JSONEachRow')
 ```
-```
+```sql
 :) INSERT INTO url_engine_distributed VALUES ('hello', 1), ('world', 2)
 :) SELECT * FROM url_engine_distributed
 
@@ -67,7 +67,7 @@ The following examples illustrates usage for distributed `INSERT` and `SELECT` s
 ```
 ###### Expiration
 Items can be set to expire by including an `__expires` key in the object carrying a future Unix timestamp:
-```
+```sql
 :) CREATE TABLE default.url_engine_expire
    (
        `key` String,
@@ -79,14 +79,14 @@ Items can be set to expire by including an `__expires` key in the object carryin
 
 ##### clickhouse-local
 Get data into clickhouse-local with zero efforts:
-```
+```bash
 clickhouse-local -q "select count() from url('https://urleng.com/supersecret', JSONEachRow)"
 ```
 
 ##### chdb
 Get data using [chdb]([https://chdb.dev](https://chdb.fly.dev/?#U0VMRUNUICogZnJvbSB1cmwoJ2h0dHBzOi8vdXJsZW5nLmNvbS94eHgnLCBKU09ORWFjaFJvdywgJ2tleSBTdHJpbmcsIHZhbHVlIFVJbnQ2NCcpIExJTUlUIDEwOw==)) in-memory engine:
-```
-python -m chdb "SELECT * from url('https://urleng.com/xxx', JSONEachRow, 'key String, value UInt64') LIMIT 10;" Pretty
+```bash
+python -m chdb "SELECT * from url('https://urleng.com/xxx', JSONEachRow, 'key String, value UInt64');" Pretty
 ```
 
 ##### CURL
@@ -94,15 +94,17 @@ python -m chdb "SELECT * from url('https://urleng.com/xxx', JSONEachRow, 'key St
 Insert and query data using curl or any other HTTP/S GET/POST capable client.
 
 ###### POST ndjson
-```
-curl -s -XPOST https://urleng.com/supersecret -H 'Content-Type:application/x-ndjson' --data-binary @ndjson.txt
+```bash
+curl -s -XPOST https://urleng.com/supersecret \
+     -H 'Content-Type:application/x-ndjson' --data-binary @ndjson.txt
 ```
 ###### POST json
-```
-curl -X POST https://url-engine.metrico.in/supersecret -H 'Content-Type: application/json' -d '[{"key":"curl","value":1}]'
+```bash
+curl -X POST https://url-engine.metrico.in/supersecret \
+     -H 'Content-Type: application/json' -d '[{"key":"curl","value":1}]'
 ```
 ###### GET
-```
+```bash
 curl -X GET https://urleng.com/supersecret
 ```             
 
